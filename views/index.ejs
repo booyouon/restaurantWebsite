@@ -9,6 +9,8 @@
 </head>
 <body>
     
+  <div class="popup"></div>
+
   <div class="header">
     <header>
       <h1>The Kiki Bar</h1>
@@ -23,12 +25,24 @@
 
   <div class="nav">
     <nav>
-      <a>Menu</a>
-      <a>About Us</a>
-      <a>Contact</a>
-      <a>Reviews</a>
+        <div class="nav__hamburger">
+            <div class="nav__hamburgerLine"></div>
+            <div class="nav__hamburgerLine"></div>
+            <div class="nav__hamburgerLine"></div>
+        </div>
+      <a class="nav__menu nav__a">Menu</a>
+      <a class="nav__about nav__a">About Us</a>
+      <a class="nav__contact nav__a">Contact</a>
+      <a class="nav__review nav__a">Reviews</a>
     </nav>
     <div class="nav__line"></div>
+  </div>
+
+  <div class="body__hamburgerMenu">
+    <a class="nav__menu">Menu</a>
+    <a class="nav__about">About Us</a>
+    <a class="nav__contact">Contact</a>
+    <a class="nav__review">Reviews</a>
   </div>
 
 <div class="body">
@@ -45,35 +59,52 @@
   </div>
   <div class="body__contact">
     <h2>Contact</h2>
-    <address>
+    <address class="contact__address">
       <p>999 Luna St. <br>
         Los Angeles, CA 99999</p>
       <a href="mailto:redspider@lily.com">redspider@lily.com</a> <br>
       <a href="tel:+9999999999">(999) 999-9999</a>
     </address>
-    <textarea name="msg" class="contact__msg" cols="80" rows="15" form="contact__form"></textarea>
-   <form action="" id="contact__form" >
-     <div>
-      <label for="name">Name:</label> <br>
-      <input type="text" class="contact__name" name="name">
-     </div>
+    <h3>Write a message:</h3>
+   <form action="" id="contact__form" method="POST">
+     
+     <div class="contact__info">
       <div>
-      <label for="email">Email:</label> <br>
-      <input type="email" class="contact__email" name="email">
+        <label for="name">Name:</label> <br>
+        <input type="text" class="contact__name" name="name" required>
       </div>
+      <div>
+        <label for="email">Email:</label> <br>
+        <input type="email" class="contact__email" name="email" required>
+      </div>
+     </div>
+     
+     <textarea class="contact__msg" name="msg" form="contact__form" cols="30" rows="10" required></textarea>
      <input type="submit" class="contact__submit">
+     
     </form>
+    
   </div>
+  
+  <!--Review-->
+  <div class="body__reviews">
+    <h2>Reviews</h2>
+    <h3>Leave a Review:</h3>
+    <form action="" method="POST" id="review__form">
+      <label for="name">Name:</label> <br>
+      <input type="text" name="name" class="review__name" > <br>
+      <textarea name="review" class="review__msg" form="review__form" cols="30" rows="10"></textarea><br>
+      <input type="submit" class="review__submit">
+    </form>
+    <hr>
+    <div class="review__display"></div>
+  </div>
+   
+  
 </div>
 
-<footer>
-  <div class="footer__line"></div>
-  <div class="footer__contact">
-    
-  </div>
-  <div class="footer__hours">
-    
-  </div>
-</footer>
+<div class="footer__line"></div>
+
+<script src="app.js"></script>
 </body>
 </html>
