@@ -25,3 +25,7 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
     res.render('index');
 })
+
+app.use((req,res) => {
+    res.status(404).send('Page not found');
+})
