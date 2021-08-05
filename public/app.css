@@ -79,7 +79,7 @@
   }
   
   .body {
-    width: 50%;
+    width: 80%;
     margin: auto;
     padding: 70px 0px;
   }
@@ -162,4 +162,28 @@
     .nav__a {
         display: none;
     }
+}
+
+.menu__products__ul {
+  display: flex; 
+  flex-direction: column; 
+  width: 50%; 
+  padding: 0px 50px; 
+  list-style-type: none; 
+  line-height: 1.75;
+}
+
+.menu__products__li {
+  text-align: center; 
+  padding: 10px 0px;
+}
+
+.menu__products__li__name {
+  color: rgb(255, 87, 51);
+  font-weight: bold;
+  font-size: large;
+}
+
+.menu__products__li__description {
+  color: rgb(105,105,105);
 }

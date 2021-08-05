@@ -48,6 +48,32 @@
 <div class="body">
   <div class="body__menu">
     <h2>Menu</h2>
+    <div class="menu__products" style="display: flex; flex-direction: row;">
+      
+        <ul class="menu__products__ul">
+          <% for(let i = 0; i < 12; i++) { %>
+            <li class="menu__products__li">
+              <span class="menu__products__li__name"><%= data[i].name %></span><br>
+              <span class="menu__products__li__description">
+                <%= data[i].description %> <br>
+                abv: <%= data[i].abv %>% | ibu: <%= data[i].ibu %> 
+              </span>
+            </li>
+          <% } %>  
+        </ul>
+
+        <ul class="menu__products__ul">
+          <% for(let i = 12; i < data.length; i++) { %>
+            <li class="menu__products__li">
+              <span class="menu__products__li__name"><%= data[i].name %></span><br>
+              <span class="menu__products__li__description">
+                <%= data[i].description %> <br>
+                abv: <%= data[i].abv %>% | ibu: <%= data[i].ibu %> 
+              </span>
+            </li>
+          <% } %>  
+        </ul>
+    </div>
   </div>
   <div class="body__about">
     <h2>About Us</h2>

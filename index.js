@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const path = require('path');
-
+const { default: fetch } = require('node-fetch');
 const mongoose = require('mongoose');
+const { response } = require('express');
+
 mongoose.connect('mongodb://localhost:27017/thekikibar', {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
         console.log("mongo connection open");
@@ -11,7 +13,7 @@ mongoose.connect('mongodb://localhost:27017/thekikibar', {useNewUrlParser: true,
     .catch(err => {
         console.log("mongo error");
         console.log(err);
-    }); 
+    });
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'))
@@ -22,8 +24,11 @@ app.listen(port, () => {
     console.log(`listening on ${port}`);
 })
 
-app.get('/', (req, res) => {
-    res.render('index');
+app.get('/', async (req, res) => {
+    const punkapi = await fetch('https://api.punkapi.com/v2/beers');
+    const data = await punkapi.json();
+    console.log(data);
+    res.render('index', {data});
 })
 
 app.use((req,res) => {
