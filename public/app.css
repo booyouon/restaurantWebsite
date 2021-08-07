@@ -136,9 +136,8 @@
   }
   
   .nav__hamburger{
-      display: none;
-      align-self: flex-end;
-      cursor: pointer;
+    display: none;
+    cursor: pointer;
   }
 
   .nav__hamburger:active .nav__hamburgerLine {
@@ -164,6 +163,11 @@
     }
 }
 
+.menu__products {
+  display: flex; 
+  flex-direction: row;
+}
+
 .menu__products__ul {
   display: flex; 
   flex-direction: column; 
@@ -186,4 +190,29 @@
 
 .menu__products__li__description {
   color: rgb(105,105,105);
+}
+
+.body__hamburgerMenu {
+  display: none; 
+  flex-direction: column; 
+  background-color: rgb(218, 218, 218);
+  width: 80%;
+  margin: auto;
+}
+
+.nav__link {
+  color: rgb(105,105,105);
+  padding: 10px 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.nav__link:hover {
+  color:rgb(255, 87, 51);
+}
+
+@media screen and (min-width: 1024px) {
+  .body__hamburgerMenu {
+      display: none !important;
+  }
 }

@@ -27,7 +27,6 @@ app.listen(port, () => {
 app.get('/', async (req, res) => {
     const punkapi = await fetch('https://api.punkapi.com/v2/beers');
     const data = await punkapi.json();
-    console.log(data);
     res.render('index', {data});
 })
 
