@@ -1,136 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
-    <title>The Kiki Bar</title>
-</head>
-<body>
-    
-  <div class="popup"></div>
+<% layout('/layouts/boilerplate') %> 
 
-  <div class="header">
-    <header>
-      <h1>The Kiki Bar</h1>
-      <address>
-        999 Luna St.
-        Los Angeles, CA 99999 <br>
-        <strong>Open 12pm - 8pm daily</strong>
-      </address>
-    </header>
-    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1934&q=80" alt="" class="header__img">
-  </div>
+<div class="popup"></div>
 
-  <div class="nav">
-    <nav>
-        <div class="nav__hamburger">
-            <div class="nav__hamburgerLine"></div>
-            <div class="nav__hamburgerLine"></div>
-            <div class="nav__hamburgerLine"></div>
-        </div>
-      <a class="nav__menu nav__a">Menu</a>
-      <a class="nav__about nav__a">About Us</a>
-      <a class="nav__contact nav__a">Contact</a>
-      <a class="nav__review nav__a">Reviews</a>
-    </nav>
-    <div class="nav__line"></div>
-  </div>
-
-  <div class="body__hamburgerMenu">
-    <a class="nav__menu nav__link">Menu</a>
-    <a class="nav__about nav__link">About Us</a>
-    <a class="nav__contact nav__link">Contact</a>
-    <a class="nav__review nav__link">Reviews</a>
-  </div>
+<%- include('./partials/header')  %> 
+<%- include('./partials/navbar')  %> 
 
 <div class="body">
-  <div class="body__menu">
-    <h2>Menu</h2>
-    <div class="menu__products">
-      
-        <ul class="menu__products__ul">
-          <% for(let i = 0; i < 12; i++) { %>
-            <li class="menu__products__li">
-              <span class="menu__products__li__name"><%= data[i].name %></span><br>
-              <span class="menu__products__li__description">
-                <%= data[i].description %> <br>
-                abv: <%= data[i].abv %>% | ibu: <%= data[i].ibu %> 
-              </span>
-            </li>
-          <% } %>  
-        </ul>
-
-        <ul class="menu__products__ul">
-          <% for(let i = 12; i < data.length; i++) { %>
-            <li class="menu__products__li">
-              <span class="menu__products__li__name"><%= data[i].name %></span><br>
-              <span class="menu__products__li__description">
-                <%= data[i].description %> <br>
-                abv: <%= data[i].abv %>% | ibu: <%= data[i].ibu %> 
-              </span>
-            </li>
-          <% } %>  
-        </ul>
-    </div>
-  </div>
-  <div class="body__about">
-    <h2>About Us</h2>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam dignissimos adipisci ipsum repellat sed tempora minus necessitatibus minima at nobis explicabo odit quam optio architecto eos, animi veritatis sunt aperiam!
-      At nulla dolores numquam nesciunt sapiente molestias eveniet, sequi quasi excepturi ullam est non asperiores hic neque aut deserunt voluptatum eligendi maiores. Alias et unde ratione similique modi? Nemo, sit.
-      Consectetur esse eveniet fugiat, quam numquam dolorem doloribus nesciunt soluta alias. In, perferendis accusamus at autem illum vero laudantium quas similique, eveniet molestiae unde earum amet fugit nesciunt tempora necessitatibus.
-    </p>
-  </div>
-  <div class="body__contact">
-    <h2>Contact</h2>
-    <address class="contact__address">
-      <p>999 Luna St. <br>
-        Los Angeles, CA 99999</p>
-      <a href="mailto:redspider@lily.com">redspider@lily.com</a> <br>
-      <a href="tel:+9999999999">(999) 999-9999</a>
-    </address>
-    <h3>Write a message:</h3>
-   <form action="" id="contact__form" method="POST">
-     
-     <div class="contact__info">
-      <div>
-        <label for="name">Name:</label> <br>
-        <input type="text" class="contact__name" name="name" required>
-      </div>
-      <div>
-        <label for="email">Email:</label> <br>
-        <input type="email" class="contact__email" name="email" required>
-      </div>
-     </div>
-     
-     <textarea class="contact__msg" name="msg" form="contact__form" cols="30" rows="10" required></textarea>
-     <input type="submit" class="contact__submit">
-     
-    </form>
+<div class="body__menu">
+  <h2>Menu</h2>
+  <div class="menu__products">
     
+      <ul class="menu__products__ul">
+        <% for(let i = 0; i < 12; i++) { %>
+          <li class="menu__products__li">
+            <span class="menu__products__li__name"><%= data[i].name %></span><br>
+            <span class="menu__products__li__description">
+              <%= data[i].description %> <br>
+              abv: <%= data[i].abv %>% | ibu: <%= data[i].ibu %> 
+            </span>
+          </li>
+        <% } %>  
+      </ul>
+
+      <ul class="menu__products__ul">
+        <% for(let i = 12; i < data.length; i++) { %>
+          <li class="menu__products__li">
+            <span class="menu__products__li__name"><%= data[i].name %></span><br>
+            <span class="menu__products__li__description">
+              <%= data[i].description %> <br>
+              abv: <%= data[i].abv %>% | ibu: <%= data[i].ibu %> 
+            </span>
+          </li>
+        <% } %>  
+      </ul>
   </div>
-  
-  <!--Review-->
-  <div class="body__reviews">
-    <h2>Reviews</h2>
-    <h3>Leave a Review:</h3>
-    <form action="" method="POST" id="review__form">
+</div>
+<div class="body__about">
+  <h2>About Us</h2>
+  <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam dignissimos adipisci ipsum repellat sed tempora minus necessitatibus minima at nobis explicabo odit quam optio architecto eos, animi veritatis sunt aperiam!
+    At nulla dolores numquam nesciunt sapiente molestias eveniet, sequi quasi excepturi ullam est non asperiores hic neque aut deserunt voluptatum eligendi maiores. Alias et unde ratione similique modi? Nemo, sit.
+    Consectetur esse eveniet fugiat, quam numquam dolorem doloribus nesciunt soluta alias. In, perferendis accusamus at autem illum vero laudantium quas similique, eveniet molestiae unde earum amet fugit nesciunt tempora necessitatibus.
+  </p>
+</div>
+<div class="body__contact">
+  <h2>Contact</h2>
+  <address class="contact__address">
+    <p>999 Luna St. <br>
+      Los Angeles, CA 99999</p>
+    <a href="mailto:redspider@lily.com">redspider@lily.com</a> <br>
+    <a href="tel:+9999999999">(999) 999-9999</a>
+  </address>
+  <h3>Write a message:</h3>
+  <form id="contact__form">
+    
+    <div class="contact__info">
+    <div>
       <label for="name">Name:</label> <br>
-      <input type="text" name="name" class="review__name" > <br>
-      <textarea name="review" class="review__msg" form="review__form" cols="30" rows="10"></textarea><br>
-      <input type="submit" class="review__submit">
-    </form>
-    <hr>
-    <div class="review__display"></div>
-  </div>
-   
+      <input type="text" class="contact__name" name="name" required>
+    </div>
+    <div>
+      <label for="email">Email:</label> <br>
+      <input type="email" class="contact__email" name="email" required>
+    </div>
+    </div>
+    
+    <textarea class="contact__msg" name="msg" form="contact__form" cols="30" rows="10" required></textarea>
+    <input type="submit" class="contact__submit">
+    
+  </form>
   
 </div>
 
-<div class="footer__line"></div>
+<!--Review-->
+<div class="body__reviews">
+  <h2>Reviews</h2>
+  <h3>Leave a Review:</h3>
+  <form action="" method="POST" id="review__form">
+    <label for="name">Name:</label> <br>
+    <input type="text" name="name" class="review__name" > <br>
+    <textarea name="review" class="review__msg" form="review__form" cols="30" rows="10"></textarea><br>
+    <% for (let i =0; i < 5; i++) { %> 
+    <i class="far fa-star fa-3x"></i>
+    <% } %> 
+    <br>
+    <input type="submit" class="review__submit">
+  </form>
+  <hr>
+  <div class="review__display"></div>
+</div>
+  
 
-<script src="app.js"></script>
-</body>
-</html>
+</div>
+
+<div class="footer__line"></div>
