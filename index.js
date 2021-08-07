@@ -6,6 +6,7 @@ const { default: fetch } = require('node-fetch');
 const mongoose = require('mongoose');
 const { response } = require('express');
 const ejsMate = require('ejs-mate');
+const reviews = require('./models/reviews');
 
 mongoose.connect('mongodb://localhost:27017/thekikibar', {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
@@ -30,7 +31,8 @@ app.listen(port, () => {
 app.get('/', async (req, res) => {
     const punkapi = await fetch('https://api.punkapi.com/v2/beers');
     const data = await punkapi.json();
-    res.render('index', {data});
+    const review = await reviews.find({});
+    res.render('index', { data, review });
 })
 
 app.use((req,res) => {

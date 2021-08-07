@@ -216,3 +216,12 @@
       display: none !important;
   }
 }
+
+.review__display {
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.review__displayContent {
+  margin-bottom: 10px;
+}
