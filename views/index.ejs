@@ -75,10 +75,10 @@
 <div class="body__reviews">
   <h2>Reviews</h2>
   <h3>Leave a Review:</h3>
-  <form action="" method="POST" id="review__form">
+  <form action="/" method="POST">
     <label for="name">Name:</label> <br>
-    <input type="text" name="name" class="review__name" > <br>
-    <textarea name="comment" class="review__msg" form="review__form" cols="30" rows="10"></textarea><br>
+    <input type="text" name="name" class="review__name"> <br>
+    <textarea name="comment" class="review__msg" cols="30" rows="10"></textarea><br>
     <input type="submit" class="review__submit">
   </form>
   <hr>
@@ -91,6 +91,15 @@
       <p>
         <%= rev.comment %> 
       </p>
+      <h5 class="review__editBtn">edit</h5>
+      <div class="review__editContainer">
+        <form id="editForm<%= rev._id %>" action="/<%= rev._id %>?_method=PUT" method="POST"></form>
+        <form id="deleteForm<%= rev._id %>" action="/<%= rev._id %>?_method=DELETE" method="POST"></form>
+          <textarea name="comment" class="review__msg" cols="30" rows="10" form="editForm<%= rev._id %>"><%= rev.comment %></textarea><br>
+          <button type="submit" class="review__submitEdit" form="editForm<%= rev._id %>">Save Changes</button>
+          <button type="submit" class="review__submitDelete" form="deleteForm<%= rev._id %>">Delete</button>
+      </div>
+
     </div>
     <% } %> 
   </div>
