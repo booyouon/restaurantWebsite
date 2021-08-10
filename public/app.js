@@ -13,6 +13,9 @@ const bodyArray = [menu, about, contact, reviews];
 const hamburger = document.querySelector('.nav__hamburger');
 const hamburgerMenu = document.querySelector('.body__hamburgerMenu');
 
+const review__editBtn = document.querySelectorAll('.review__editBtn');
+const review__editContainer = document.querySelectorAll('.review__editContainer');
+
 for (let i = 0; i < btnArray.length; i++) {
   for (let j = 0; j < 2; j++) {
     btnArray[i][j].addEventListener('click', () => {
@@ -35,3 +38,12 @@ hamburger.addEventListener('click', () => {
   }
 })
 
+for (let i = 0; i < review__editBtn.length; i++) {
+  review__editBtn[i].addEventListener('click', () =>{
+    if (review__editContainer[i].style.display == 'inline') {
+      review__editContainer[i].style.display = 'none';
+    } else {
+      review__editContainer[i].style.display = 'inline';
+    }
+  })
+}

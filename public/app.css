@@ -235,7 +235,7 @@ a {
 }
 
 .review__editContainer {
-  display: inline;
+  display: none;
 }
 
 .review__editBtn {
