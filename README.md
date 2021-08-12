@@ -10,10 +10,10 @@ restaurantWebsite is a single-page fake restaurant.
 ## Technologies Used
 
 ### Front-end:
-HTML, CSS, Javascript, EJS, Fontawesome (for icons), Bootstrap, EJS-mate
+HTML, CSS, Javascript, EJS, Fontawesome (for icons), EJS-mate
 
 ### Back-end:
-Nodejs, Express, Mongoose, Mongodb, method-override, 
+Nodejs, Express, Mongoose, Mongodb, method-override, node-fetch
 
 ### Other:
 NPM, github 
