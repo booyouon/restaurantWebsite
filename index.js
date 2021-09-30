@@ -10,11 +10,15 @@ const reviews = require("./models/reviews");
 const methodOverride = require("method-override");
 
 mongoose
-  .connect("mongodb://localhost:27017/thekikibar", {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    process.env.MONGODB_URI ||
+      "mongodb+srv://sample:ihKvH2G1QED6in84@cluster0.yo7eo.mongodb.net/fakerestaurant?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useFindAndModify: false,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log("mongo connection open");
   })
