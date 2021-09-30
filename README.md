@@ -1,6 +1,6 @@
 # restaurantWebsite
 
-restaurantWebsite is a single-page fake restaurant. 
+restaurantWebsite is a single-page fake restaurant. deployed site [here](https://kiki-restaurant.herokuapp.com/)
 
 ## Features
 * Consumes Punk API to generate the products displayed in the menu. 
